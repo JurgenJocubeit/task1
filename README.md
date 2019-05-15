@@ -15,3 +15,34 @@
 - [ ] Engineer your solution as if there’s a high chance it will be re-used
 - [x] Keep lines wrapped at 120 characters
 - [ ] Enjoy this challenge!
+
+## Testing
+
+To run the tests, ensure the dependencies are installed:
+```
+bundle install
+```
+
+In Terminal, from the project directory, execute the following:
+```
+bundle exec rspec
+```
+
+Rspec output configuration is included in `.rspec`. To include test profile summary (top 10 slowest examples etc.) change the configuration to include `--profile`:
+
+```
+--colour --format documentation --profile
+```
+
+### Code Coverage
+
+SimpleCov is used to report code coverage and is automatically included when you run the Rspec examples. You can access the HTML report after running the Rspec examples (see above) by opening `/coverage/index.html`.
+
+### Static Code Analysis & Formatting
+
+Rubocop is used to check for coding and formatting offenses. Rubocop configuration is included in `.rubocop.yml`.
+
+Metrics/BlockLength is overridden to exclude spec files and Metrics/LineLength is set to 120 characters. To perform the check, execute the following:
+```
+bundle exec rubocop
+```
