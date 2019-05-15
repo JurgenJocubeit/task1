@@ -17,21 +17,29 @@ module Calculator
 
   # Operation function for division.
   def divided_by(right_operand)
+    raise ArgumentError unless right_operand.is_a?(Integer)
+
     proc { |left_operand| left_operand / right_operand }
   end
 
   # Operation function for subtraction.
   def minus(right_operand)
+    raise ArgumentError unless right_operand.is_a?(Integer)
+
     proc { |left_operand| left_operand - right_operand }
   end
 
   # Operation function for addition.
   def plus(right_operand)
+    raise ArgumentError unless right_operand.is_a?(Integer)
+
     proc { |left_operand| left_operand + right_operand }
   end
 
   # Operation function for multiplication.
   def times(right_operand)
+    raise ArgumentError unless right_operand.is_a?(Integer)
+
     proc { |left_operand| left_operand * right_operand }
   end
 end

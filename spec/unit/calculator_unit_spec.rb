@@ -48,5 +48,12 @@ RSpec.describe 'unit' do
       expect(example.send(:minus, 3).call(6)).to eq(3)
       expect(example.send(:divided_by, 2).call(8)).to eq(4)
     end
+
+    it 'raises ArgumentError if args are not Integer in operator functions' do
+      expect { example.send(:times, '6').call(5) }.to raise_error(ArgumentError)
+      expect { example.send(:plus, '9').call(1) }.to raise_error(ArgumentError)
+      expect { example.send(:minus, '3').call(6) }.to raise_error(ArgumentError)
+      expect { example.send(:divided_by, '2').call(8) }.to raise_error(ArgumentError)
+    end
   end
 end
