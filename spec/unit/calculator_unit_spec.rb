@@ -19,5 +19,17 @@ RSpec.describe 'unit' do
         expect(example).to respond_to(word.to_sym)
       end
     end
+
+    it 'returns an integer for each number function when called without an arg' do
+      Calculator::NUMBERS.each_with_index do |word, int|
+        expect(example.send(word.to_sym)).to eq(int)
+      end
+    end
+
+    it 'responds to functions for operators' do
+      %i[divided_by minus plus times].each do |word|
+        expect(example).to respond_to(word.to_sym)
+      end
+    end
   end
 end

@@ -14,4 +14,24 @@ module Calculator
       operation.call(int)
     end
   end
+
+  # Operation function for division.
+  def divided_by(right_operand)
+    proc { |left_operand| left_operand / right_operand }
+  end
+
+  # Operation function for subtraction.
+  def minus(right_operand)
+    proc { |left_operand| left_operand - right_operand }
+  end
+
+  # Operation function for addition.
+  def plus(right_operand)
+    proc { |left_operand| left_operand + right_operand }
+  end
+
+  # Operation function for multiplication.
+  def times(right_operand)
+    proc { |left_operand| left_operand * right_operand }
+  end
 end
