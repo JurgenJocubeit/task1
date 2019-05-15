@@ -23,7 +23,12 @@ module Calculator
       # Allow zero in the left_operand only.
       raise ZeroDivisionError if right_operand.zero?
 
-      left_operand / right_operand
+      # Test if division will yield a remainder.
+      if (left_operand.to_f % right_operand.to_f).zero?
+        left_operand / right_operand # return Integer
+      else
+        left_operand.to_f / right_operand.to_f # return Float
+      end
     end
   end
 

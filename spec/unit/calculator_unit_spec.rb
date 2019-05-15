@@ -66,5 +66,17 @@ RSpec.describe 'unit' do
         example.send(:divided_by, example.send(:zero)).call(example.send(:one))
       end.to raise_error(ZeroDivisionError)
     end
+
+    it 'returns an integer if no remainder for division operation' do
+      answer = example.send(:divided_by, example.send(:three)).call(example.send(:six))
+      expect(answer).is_a?(Integer)
+      expect(answer).to eq(2)
+    end
+
+    it 'returns a float only when necessary for division operation' do
+      answer = example.send(:divided_by, example.send(:six)).call(example.send(:three))
+      expect(answer).is_a?(Float)
+      expect(answer).to eq(0.5)
+    end
   end
 end
