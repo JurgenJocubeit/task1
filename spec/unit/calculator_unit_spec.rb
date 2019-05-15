@@ -31,5 +31,10 @@ RSpec.describe 'unit' do
         expect(example).to respond_to(word.to_sym)
       end
     end
+
+    it 'calculates an operation that returns a proc that can be called with an arg' do
+      answer = example.send(:times, 6).call(5)
+      expect(answer).to eq(30)
+    end
   end
 end
