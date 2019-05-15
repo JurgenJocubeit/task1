@@ -41,5 +41,12 @@ RSpec.describe 'unit' do
       answer = example.send(:times, example.send(:six)).call(example.send(:five))
       expect(answer).to eq(30)
     end
+
+    it 'calculates each operation correctly' do
+      expect(example.send(:times, 5).call(6)).to eq(30)
+      expect(example.send(:plus, 9).call(1)).to eq(10)
+      expect(example.send(:minus, 3).call(6)).to eq(3)
+      expect(example.send(:divided_by, 2).call(8)).to eq(4)
+    end
   end
 end
