@@ -1,0 +1,6 @@
+coverage
+spec/reports
+Gemfile.lock
+.bundle
+.*~
+*~
