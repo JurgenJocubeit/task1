@@ -36,5 +36,10 @@ RSpec.describe 'unit' do
       answer = example.send(:times, 6).call(5)
       expect(answer).to eq(30)
     end
+
+    it 'calculates an operation using word number functions' do
+      answer = example.send(:times, example.send(:six)).call(example.send(:five))
+      expect(answer).to eq(30)
+    end
   end
 end
