@@ -19,7 +19,12 @@ module Calculator
   def divided_by(right_operand)
     raise ArgumentError unless right_operand.is_a?(Integer)
 
-    proc { |left_operand| left_operand / right_operand }
+    proc do |left_operand|
+      # Allow zero in the left_operand only.
+      raise ZeroDivisionError if right_operand.zero?
+
+      left_operand / right_operand
+    end
   end
 
   # Operation function for subtraction.

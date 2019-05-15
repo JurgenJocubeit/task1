@@ -55,5 +55,16 @@ RSpec.describe 'unit' do
       expect { example.send(:minus, '3').call(6) }.to raise_error(ArgumentError)
       expect { example.send(:divided_by, '2').call(8) }.to raise_error(ArgumentError)
     end
+
+    it 'allows LHS operand which is zero to be divided by any number' do
+      answer = example.send(:divided_by, example.send(:one)).call(example.send(:zero))
+      expect(answer).to eq(0)
+    end
+
+    it 'raises ZeroDivisionError when attempting to use zero as RHS operand' do
+      expect do
+        example.send(:divided_by, example.send(:zero)).call(example.send(:one))
+      end.to raise_error(ZeroDivisionError)
+    end
   end
 end
