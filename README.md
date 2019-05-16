@@ -14,7 +14,7 @@
 - [x] Use whatever tools you’d like (gems, patterns, etc)
 - [x] Engineer your solution as if there’s a high chance it will be re-used
 - [x] Keep lines wrapped at 120 characters
-- [ ] Enjoy this challenge!
+- [x] Enjoy this challenge!
 
 ## Solution
 
