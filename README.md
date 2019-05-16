@@ -40,7 +40,7 @@ gem 'calculator', '~> 1.0', github: 'JurgenJocubeit/task1'
 
 Calulator module can be included in your class for instance methods, or you can extend your class to access functions as class methods.
 
-```
+```ruby
 class InclusionExample
   include Calculator
 
@@ -53,7 +53,7 @@ InclusionExample.new
 #=> six(times(five)) = 30
 ```
 
-```
+```ruby
 class ExtendedExample
   extend Calculator
 
