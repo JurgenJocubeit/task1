@@ -16,6 +16,36 @@
 - [x] Keep lines wrapped at 120 characters
 - [ ] Enjoy this challenge!
 
+## How to use
+
+Calulator module can be included in your class for instance methods, or you can extend your class to access functions as class methods.
+
+```
+class InclusionExample
+  include Calculator
+
+  def initialize
+    puts "six(times(five)) = #{six(times(five))}"
+  end
+end
+
+InclusionExample.new
+#=> six(times(five)) = 30
+```
+
+```
+class ExtendedExample
+  extend Calculator
+
+  def self.call
+    puts "six(times(five)) = #{six(times(five))}"
+  end
+end
+
+ExtendedExample.call
+#=> six(times(five)) = 30
+```
+
 ## Testing
 
 To run the tests, ensure the dependencies are installed:
